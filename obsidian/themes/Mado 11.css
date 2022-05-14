@@ -1,0 +1,1520 @@
+:root {
+	/* Mado-11 Palette */
+	--mado-white-1:hsla(204, 45%, 97%, 1);
+	--mado-white-2:hsla(210, 45%, 95%, 1);
+	--mado-white-3:hsla(212, 17%, 80%, 0.2);
+	--mado-white-6:hsla(212, 17%, 80%, 0.3);
+	--mado-white-4:hsla(180, 33%, 99%, 1);
+	--mado-white-5:hsla(207, 10%, 90%, 0.1);
+	
+	--mado-blue-1:hsla(209, 95%, 62%, 1);
+	--mado-blue-2:hsla(209, 85%, 72%, 0.5);
+	
+	--mado-black-1:hsla(0, 0%, 13%, 1);
+	--mado-black-2:hsla(220, 20%, 35%, 1);
+	--mado-gray-1:hsla(0, 0%, 33%, 1);
+	--mado-gray-2:hsla(210, 15%, 70%, 0.2);
+	--mado-gray-3:hsla(210, 15%, 20%, 0.2);
+	--mado-gray-4:hsla(210, 15%, 30%, 0.5);
+	--mado-gray-5:hsla(207, 17%, 90%, 1);
+	--mado-gray-6:hsla(217, 15%, 83%, 1);
+	
+	--mado-yellow:hsla(60, 100%, 50%, 0.4);
+	--mado-orange:hsla(25, 75%, 65%, 1);
+	--mado-red-1:hsla(365, 90%, 62%, 1);
+	--mado-red-2:hsl(365, 95%, 85%, 1);
+	--mado-red-3:hsl(365, 85%, 45%, 1);
+	
+	--button-radius:4px;
+	--window-radius:8px;
+	--readable-line-length:45rem;
+}
+
+
+.theme-light {
+	--color-black:		var(--mado-black-1);
+	--color-dark-gray:	var(--mado-gray-1);
+	--color-accent:		var(--mado-blue-1);
+	--color-accent-alt:	var(--mado-blue-2);
+	--color-gray:		var(--mado-gray-2);
+	--color-light-gray:	var(--mado-gray-3);
+	--color-medium-gray:var(--mado-gray-4);
+	
+	--modal-group-border:	var(--mado-gray-6);
+	--button-selected:		var(--mado-white-6);
+	--button-hover:			var(--mado-white-6);
+	--button-selected-hover:var(--mado-white-3);
+	
+	--window-shadow:			0 1px 3px var(--mado-white-3);
+	--window-shadow-hover:		0 3px 5px var(--mado-white-6);
+	--window-shadow-transparent:0 3px 5px transparent;
+	
+	--border:1px solid var(--mado-gray-5);
+	
+	
+	--background-primary:		var(--mado-white-1);
+	--background-secondary:		var(--mado-white-2);
+	--background-secondary-alt:	var(--mado-gray-5);
+	--background-tertiary:		var(--mado-white-3);
+	
+	--background-accent:	var(--mado-blue-1);	
+	--background-fourth:	var(--mado-white-4);
+	--background-fifth:		var(--mado-white-5);
+	--background-sixth:		var(--mado-white-4);
+	--background-code-for-mado:	var(--background-primary-alt);
+	
+	--text-code:		var(--mado-red-3);
+	--text-normal:		var(--mado-black-1);
+	--text-error:		var(--mado-red-1);
+	--text-on-accent:	var(--mado-white-1);
+	--text-faint:		var(--mado-gray-6);
+	--text-highlight-bg:var(--mado-yellow);
+	--text-bold:		var(--mado-black-2);
+	--text-em:			var(--mado-gray-4);
+	--text-muted:		hsla(218, 19%, 39%, 1);
+	
+	--background-modifier-error:	var(--mado-red-1);
+	--background-modifier-border:	var(--mado-gray-5);
+	--interactive-accent:			var(--mado-blue-1);
+	--indentation-guide:			var(--mado-gray-5);	
+	
+	--scrollbar-bg: transparent;
+}
+
+.theme-dark {
+	
+	/* dark mode quick hack */
+	--mado-white-1:hsla(215, 17%, 19%, 1);
+	--mado-white-2:hsla(214, 24%, 15%, 1);
+	--mado-white-3:hsla(212, 17%, 22%, 0.9);
+	--mado-white-6:hsla(212, 17%, 0%, 0.3);
+	--mado-white-4:hsla(215, 22%, 13%, 1);
+	--mado-white-5:hsla(207, 10%, 10%, 0.1);
+	
+	--mado-black-1:hsla(0, 0%, 73%, 1);
+	--mado-black-2:hsla(213, 33%, 65%, 1);
+	--mado-gray-1:hsla(0, 0%, 83%, 1);
+	--mado-gray-2:hsla(210, 25%, 5%, 0.3);
+	--mado-gray-3:hsla(210, 15%, 50%, 0.4);
+	--mado-gray-4:hsla(210, 15%, 70%, 0.5);
+	--mado-gray-5:hsla(207, 17%, 10%, 0.5);
+	--mado-gray-6:hsla(217, 18%, 50%, 0.7);
+	
+	--mado-yellow:hsla(45, 63%, 43%, 1);
+	
+	
+	
+	
+	--color-black:		var(--mado-black-1);
+	--color-dark-gray:	var(--mado-gray-1);
+	--color-accent:		var(--mado-blue-1);
+	--color-accent-alt:	var(--mado-blue-2);
+	--color-gray:		var(--mado-gray-2);
+	--color-light-gray:	var(--mado-gray-3);
+	--color-medium-gray:var(--mado-gray-4);
+	
+	--modal-group-border:	var(--mado-gray-6);
+	--button-selected:		var(--mado-white-6);
+	--button-hover:			var(--mado-white-6);
+	--button-selected-hover:var(--mado-white-3);
+	
+	--window-shadow:			0 1px 3px var(--mado-white-5);
+	--window-shadow-hover:		0 3px 5px var(--mado-white-6);
+	--window-shadow-transparent:0 3px 5px transparent;
+	
+	--border:1px solid var(--mado-gray-5);
+	
+	
+	
+	--background-primary:		var(--mado-white-1);
+	--background-secondary:		var(--mado-white-2);
+	--background-secondary-alt:	var(--mado-gray-5);
+	--background-tertiary:		var(--mado-white-3);
+	--background-primary-alt:	var(--mado-white-6);
+	
+	--background-accent:	var(--mado-blue-1);	
+	--background-fourth:	var(--mado-white-3);
+	--background-fifth:		var(--mado-white-5);
+	--background-sixth:		var(--mado-white-5);
+	--background-code-for-mado:	var(--mado-white-5);
+	
+	--text-code:		var(--mado-red-1);
+	--text-normal:		var(--mado-black-1);
+	--text-error:		var(--mado-red-1);
+	--text-on-accent:	var(--mado-white-1);
+	--text-faint:		var(--mado-gray-6);
+	--text-highlight-bg:var(--mado-yellow);
+	--text-bold:		var(--mado-black-2);
+	--text-em:			var(--mado-gray-6);
+	--text-muted: 		hsl(218, 17%, 58%);
+	
+	--background-modifier-error:	var(--mado-red-1);
+	--background-modifier-border:	var(--mado-gray-5);
+	--interactive-accent:			var(--mado-blue-1);
+	--indentation-guide:			var(--mado-gray-3);
+	
+	--scrollbar-bg: transparent;
+}
+
+
+body{
+	background:var(--background-secondary);
+}
+
+/*
+--------------------------- 
+	Title Bar
+---------------------------
+*/
+.titlebar{
+	background:var(--background-secondary);
+	position:absolute;
+}
+
+.titlebar-text{
+	/* hide obsidian app title */
+	display:none;
+}
+
+.titlebar-button-container.mod-left{
+	left:0!important;
+}
+
+/* Hide buttons but show them when hovered */
+.titlebar-button-container.mod-left,
+.titlebar-button-container.mod-right{
+	position:absolute;
+	opacity:0;
+	z-index:1;	
+}
+
+.titlebar-button-container.mod-left:hover,
+.titlebar-button-container.mod-right:hover{
+	opacity:1;
+}
+
+/* Button styling */
+.titlebar-button-container{
+	display:flex;
+}
+.titlebar-button{
+	display:flex;
+	padding:11px 17px;
+	color:var(--color-dark-gray);
+	border-radius:var(--button-radius);
+	transition:0.1s background;
+	opacity:0.7;
+	z-index:10;
+}
+
+.titlebar-button:hover{
+	background:var(--button-hover);
+	color:var(--color-dark-gray);
+}
+
+.titlebar-button.mod-close:hover{
+	color:var(--text-on-accent);
+}
+
+.app-container{
+	/* readjust height as to fill the gap caused by hiding the titlebar */
+	margin-top:-22px;
+	height:calc(100% + 22px);
+}
+
+
+/*
+--------------------------- 
+	Status Bar
+---------------------------
+*/
+/* hide status bar */
+.status-bar{
+	display:none;
+}
+
+
+/*
+--------------------------- 
+	PopOver Embed
+---------------------------
+*/
+.popover.hover-popover{
+	width:500px;
+	max-height:400px;
+}
+.popover.hover-popover .markdown-embed{
+	padding:13px 13px 13px 23px;
+	height:400px;
+}
+
+
+/*
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+	Markdown Common Styling
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+*/
+strong,
+.cm-strong{
+	font-weight:800;
+	color:var(--text-bold);
+}
+
+mark,
+.cm-highlight{
+	background:var(--text-highlight-bg);
+}
+.theme-dark mark,
+.theme-dark .cm-line .cm-highlight{
+	background:none;
+	border-bottom:2px solid var(--text-highlight-bg);
+}
+
+em,
+.cm-em{
+	color:var(--text-em);
+}
+
+a{
+	text-decoration:none;
+}
+
+hr{
+	background-color:var(--background-modifier-border);
+	height:2px;
+	margin:4rem 0;
+}
+
+.markdown-preview-view{
+	padding-inline:63px;
+}
+.markdown-source-view .cm-content{
+	padding-inline:13px;
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-editor .cm-contentContainer,
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-editor .cm-contentContainer .cm-content,
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-editor .cm-contentContainer .cm-content .cm-line{
+	max-width:1000px;
+}
+
+.markdown-rendered code{
+	background:none;
+	color:var(--text-code);	
+}
+
+.callout{
+	border-radius:var(--button-radius);
+}
+
+/* Whenever pane is opened/entered, or even updated, make an animation suggesting it, can be annoying */
+.workspace-split.mod-vertical.mod-root .markdown-preview-sizer.markdown-preview-section div{
+	animation:0.3s slide-up forwards;
+}
+@keyframes slide-up{
+	0% { transform:translateY(0%); opacity:0; }
+	15% { transform:translateY(5px); opacity:0.1; }
+	25% { transform:translateY(10px); }
+	45% { opacity:0.3s; }
+	65% { opacity:0.7; }
+	100% { transform:translateY(0%); opacity:1; }
+}
+
+/*
+--------------------------- 
+	Markdown Checkbox
+---------------------------
+*/
+input[type=checkbox]{
+	appearance:none;
+	cursor:pointer;
+	border:1px solid var(--color-light-gray);
+	border-radius:var(--button-radius);
+}
+
+input[type=checkbox]:checked{
+	background-color:var(--color-medium-gray);
+	background-position:center;
+	background-size:70%;
+	background-repeat:no-repeat;
+	background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='1em' height='1em' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 20 20'%3E%3Cpath d='M0 11l2-2l5 5L18 3l2 2L7 18z' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.markdown-source-view .task-list-item-checkbox,
+.markdown-preview-view .task-list-item-checkbox{
+	width:20px;
+	height:20px;
+	margin-top:-3px;
+}
+
+.markdown-preview-view .task-list-item-checkbox{
+	top:8px;
+	margin-left:-1px;
+	margin-right:10px;
+}
+
+/* Checkbox Bullet Point Alignment */
+.task-list-item .external-link{
+	vertical-align:middle;
+}
+
+/* Checkbox with link visual fix */
+.task-list-item .external-link{
+	vertical-align:top;
+}
+/*
+--------------------------- 
+	Markdown Unordered / Ordered List
+---------------------------
+*/
+
+/* Build spaces at the end of each listing to distinguish from each other (preview) */
+ul,ol{
+	padding:7px 0;
+	margin-bottom:13px;
+	
+	/* Build spaces at the start of each line (preview) */
+	padding-left:40px;
+}
+ /* Only works if indentation-guide is enabled in the settings */
+ /* Not sure how to style it without that for source-view */
+.cm-indent{
+	/* Build spaces at the start of each line (source) */
+	padding-left:12px;
+	padding-right:12px;
+}
+
+/* Build spaces at the end of each listing to distinguish from each other (source) */
+.HyperMD-list-line-1+.HyperMD-list-line:not(.HyperMD-list-line-1):not(.HyperMD-list-line-2),
+.HyperMD-list-line-2+.HyperMD-list-line:not(.HyperMD-list-line-2):not(.HyperMD-list-line-3),
+.HyperMD-list-line-3+.HyperMD-list-line:not(.HyperMD-list-line-3):not(.HyperMD-list-line-4),
+.HyperMD-list-line-4+.HyperMD-list-line:not(.HyperMD-list-line-4):not(.HyperMD-list-line-5),
+.HyperMD-list-line-5+.HyperMD-list-line:not(.HyperMD-list-line-5):not(.HyperMD-list-line-6),
+.HyperMD-list-line-6+.HyperMD-list-line:not(.HyperMD-list-line-6):not(.HyperMD-list-line-7){
+	padding-top:23px!important;
+}
+
+li{
+	padding-block:3px;
+}
+.HyperMD-list-line.cm-line{
+	padding-block:4px;
+}
+
+ul>li::marker{
+	/* Resize bullet point to a smaller version */
+	color:var(--color-dark-gray);
+	font-size:0.6rem;
+}
+
+/* Adjust line position to fit below bullet point (preview) */
+.markdown-rendered.show-indentation-guide li > ul::before,
+.markdown-rendered.show-indentation-guide li > ol::before{ 
+	left:-12px;
+}
+
+/* Adjust line position to fit below bullet point (source) */
+/* .cm-formatting-list-ol, */
+.list-bullet{
+	margin-right:7px;
+	margin-left:10px;
+}
+
+/* fix link in bullet list breaking to new line */
+li .external-link{
+	display:inline-block;
+	word-break:break-word;
+	vertical-align:top;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	max-width: 98%;
+}
+
+
+
+/*
+--------------------------- 
+	Markdown Table
+---------------------------
+*/
+
+/* Adds margin for easier identification */
+table{
+	margin:13px;
+	/* width:calc(100% - 26px); */
+	border-radius:var(--button-radius);
+	overflow:hidden;
+}
+
+/* Adds color to the header */
+thead {
+	border-top:2px solid var(--color-accent);
+	background:var(--background-tertiary);
+}
+
+/* Adds padding spaces & color to the border */
+.markdown-rendered td,
+.markdown-rendered th{
+	border:1px solid var(--color-light-gray);
+	padding:4px 17px;
+}
+
+
+/* Adjust bold size of the header */
+th{
+	font-weight:600;
+}
+
+
+/*
+--------------------------- 
+	Markdown Strikethrough
+---------------------------
+*/
+/* adjust color for strikethrough + on embed */
+ul > li.task-list-item.is-checked{
+	text-decoration-color:var(--text-faint);
+}
+
+del,
+.cm-strikethrough,
+ul > li.task-list-item.is-checked *,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]) span {
+	color:var(--text-faint);
+}
+
+/*
+--------------------------- 
+	Markdown Embed
+---------------------------
+*/
+/* adjust embed padding, visual border */
+.markdown-preview-view .markdown-embed{
+	border: 2px solid var(--background-modifier-border);
+    border-radius: var(--window-radius);
+    padding: 13px 23px;
+    margin: 0;
+	overflow:auto;
+}
+
+/* Show collapse indicator */
+.markdown-preview-view:not(.allow-fold-lists) .list-collapse-indicator{
+	display:inline-block;
+}
+
+/* Align checkbox and text together */
+.markdown-source-view.mod-cm6 .internal-embed .task-list-item-checkbox{
+	vertical-align:initial;	
+}
+
+/* Adjust margin size for checkboxes in embed */
+.HyperMD-list-line.HyperMD-list-line-2.cm-line .internal-embed .contains-task-list,
+.HyperMD-list-line.HyperMD-list-line-3.cm-line .internal-embed .contains-task-list,
+.markdown-preview-view blockquote .markdown-embed .contains-task-list{
+	margin:3px;
+}
+
+
+/*
+--------------------------- 
+	Markdown Quote
+---------------------------
+*/
+.markdown-preview-view blockquote{
+	margin:13px 0px 13px 11px;
+	padding:23px 27px 23px 37px;
+	border-radius:var(--window-radius);
+	background:var(--background-secondary);
+	border:var(--border);
+	/* border-left:5px solid var(--background-modifier-border); */
+	color:var(--text-muted);
+	position:relative;
+}
+.markdown-preview-view blockquote:before{
+	content:"";
+	position:absolute;
+	left:7px;
+	top:10px;
+	width:5px;
+	height:calc(100% - 20px);
+	background:var(--color-accent-alt);
+	border-radius:var(--window-radius);
+}
+
+/* adjust quote issue overflowing */
+.markdown-preview-view blockquote p{
+	overflow:hidden;
+}
+
+.markdown-preview-view blockquote p+p{
+	/* add padding-top to siblings for easier reading*/
+	padding-top:13px;
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-quote.cm-line{
+	padding:13px 13px!important;
+	text-indent:0!important;
+	border-left:3px solid var(--color-accent-alt);
+}
+.HyperMD-quote.cm-line+.HyperMD-quote.cm-line{
+	/* remove siblings padding-top */
+	padding-top:0!important;
+}
+
+
+
+
+
+/*
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+	Dock/Sidebar Layout W11-Styling
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+*/
+
+/* Left dock Ribbon hidden (includes expand button) */
+.workspace-ribbon{
+	visibility:collapse;
+	position:absolute;
+}
+
+/* Show expand button when hovered */
+.workspace-ribbon-collapse-btn,
+.side-dock-actions,
+.side-dock-settings{
+	position:fixed;
+	visibility:visible;
+	top:0;
+	opacity:0;
+	padding:7px;
+	color:var(--color-dark-gray);
+	border-radius:var(--button-radius);
+	transition:0.1s background, 0.1s opacity;
+}
+
+/* Fix left ribbon position for easier hovering */
+.workspace-ribbon.side-dock-ribbon.mod-left .workspace-ribbon-collapse-btn{
+	left:-1px; 
+}
+
+.side-dock-actions{
+	top:initial;
+	bottom:114px;
+	left:-23px;
+	padding:0;
+}
+.side-dock-settings{
+	top:initial;
+	bottom:0;
+	left:-23px;
+	margin-bottom:0;
+	padding:0;
+}
+.side-dock-ribbon-action{
+	color:var(--text-muted);
+	padding:7px;
+}
+
+.mod-right.workspace-ribbon,
+.mod-right .workspace-ribbon-collapse-btn{
+	right:0;
+}
+.workspace-ribbon-collapse-btn:hover,
+.side-dock-actions:hover,
+.side-dock-settings:hover{
+	visibility:visible;
+	opacity:1;
+	background:var(--button-hover);
+	border:1px solid var(--color-gray);
+	color:var(--color-dark-gray);
+}
+.side-dock-actions:hover,
+.side-dock-settings:hover{
+	left:0;
+}
+
+
+/* Hide dock's tab menu, and show them when hovered  */
+.workspace-tab-header-container{
+	position:absolute;
+	top:0;
+	opacity:0;
+	z-index:1;
+	height:1px;
+	transition:opacity 0.2s;
+	border-radius:var(--button-radius);
+	border:var(--border);
+	box-shadow:var(--window-shadow);
+	width:100%;
+}
+.workspace-tab-header-container:hover{
+	opacity:1;
+	height:auto;
+}
+
+/* remove border-radius on icons */
+.workspace-tab-header.is-before-active .workspace-tab-header-inner,
+.workspace-tab-header.is-after-active .workspace-tab-header-inner,
+.workspace-tab-container-after.is-after-active .workspace-tab-header-inner{
+	border-radius:0;
+}
+
+.workspace-split.mod-horizontal.mod-left-split .workspace-ribbon.side-dock-ribbon,
+.workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container,
+.workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-inner{
+	background:var(--background-secondary);
+}
+
+/*
+--------------------------- 
+	Note Title
+---------------------------
+*/
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header,
+.workspace-split.mod-horizontal > .workspace-leaf .view-header,
+.workspace-split.mod-vertical > .workspace-leaf .view-header{
+	height:auto;
+	display:flex;
+	align-items:center;
+	padding:13px 17px;
+	border:none;
+	background:none;
+}
+
+.view-header-title{
+	font-size:1.25rem;
+	border-radius:var(--button-radius);
+	padding:11px 17px;
+	margin-left:0px;
+	border:1px solid transparent;
+	transition:border 0.2s, background 0.2s;
+}
+
+.view-header-title:hover,.view-header-title:focus{
+	background:var(--background-fifth);
+	border:var(--border);
+}
+
+/* Remove Title gradient background */
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after,
+.workspace-split.mod-horizontal > .workspace-leaf .view-header-title-container:after,
+.workspace-split.mod-vertical > .workspace-leaf .view-header-title-container:after{
+	background:none;
+	pointer-events:none; /* Avoid blocking the space to edit title */
+}
+
+.view-action,.view-header-icon{
+	display:flex;
+	padding:11px;
+	margin:0 3px;
+	color:var(--color-dark-gray);
+	border-radius:var(--button-radius);
+	transition:0.1s background, 0.1s opacity;
+	top:0;
+}
+
+.view-action:hover,.view-header-icon:hover{
+	background:var(--button-hover);
+	color:var(--color-dark-gray);
+}
+
+.view-action:active,.view-header-icon:active{
+	opacity:0.75;
+}
+
+/* Adjust Title Background color */
+.workspace-split.mod-vertical.mod-root .workspace-leaf-content{
+	background:var(--background-primary);
+}
+
+/*
+--------------------------- 
+	Pane Resizer Handle
+---------------------------
+*/
+/* Hide them at default, shows only when hovered */
+/* Also adjusted thickness for easier finding/gripping */
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle{
+	background:none;
+	height:7px;
+}
+
+.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle{
+	background:none;
+	width:7px;
+}
+
+.workspace-split .workspace-leaf-resize-handle:hover{
+	background:var(--color-accent);
+}
+
+/* Show some space when there are multiple notes in a single screen */
+.workspace-split.mod-horizontal > .workspace-leaf{
+	padding-bottom:4px;
+}
+
+
+/*
+--------------------------- 
+	Main Pane Border Styling 
+---------------------------
+*/
+.workspace-split.mod-horizontal.mod-left-split.is-collapsed+.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content{
+	border-top-left-radius: 0px;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-leaf:first-of-type{
+	border-top-right-radius: 0px;
+	border-top-left-radius: 23px;
+}
+.workspace-split.mod-vertical.mod-root .workspace-leaf{
+	border-left:var(--border);
+}
+
+/*
+--------------------------- 
+	Left Dock Styling
+---------------------------
+*/
+/* markdown-preview-sizer is note placed onto the dock */
+
+/* Left dock navigation (new note, new folder, reorder) */
+.mod-left-split .workspace-leaf-content[data-type="file-explorer"] .nav-header{
+	position:absolute;
+	top:13px;
+	right:-23px;
+	flex-direction:column;
+	z-index:1;
+	padding:0;
+	opacity:0;
+}
+.mod-left-split .workspace-leaf-content[data-type="file-explorer"] .nav-header:hover{
+	right:0;
+	opacity:1;
+}
+
+.mod-left-split .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container{
+	flex-direction:column;
+}
+.mod-left-split .nav-header .nav-action-button{
+	padding:7px 7px 3px;
+	margin:0;
+	color:var(--color-dark-gray);
+	border-radius:var(--button-radius);
+	transition:0.1s background, 0.1s opacity;
+	background:var(--background-secondary);
+	top:0;
+	border:1px solid var(--color-gray);
+}
+.mod-left-split .workspace-leaf-content:not([data-type="file-explorer"]) .nav-header .nav-action-button{
+	margin:0 1px;
+}
+.mod-left-split .nav-header .nav-action-button:hover{
+	background:var(--button-hover);
+	color:var(--color-dark-gray);
+}
+.mod-left-split .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-action-button:active{
+	opacity:0.75;
+}
+
+/* Left dock Vault title hidden */
+.nav-folder.mod-root>.nav-folder-title{
+	display:none;
+}
+
+/* Give space for title-bar dragging */
+.mod-left-split{
+	padding-top:22px;
+}
+
+.workspace-leaf-content[data-type="file-explorer"],
+.workspace-leaf-content[data-type="starred"],
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .markdown-preview-sizer div{
+	background:var(--background-secondary);
+	display:flex;
+	flex-direction:column;
+	gap:4px;
+	user-select:none;
+	padding-inline:8px;
+	padding-block:8px;	
+}
+
+.nav-folder-children,
+.item-list,
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .markdown-preview-sizer p{
+	display:flex;
+	flex-direction:column;
+	gap:4px;
+}
+
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .markdown-preview-sizer{
+	padding:0!important;
+}
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.is-readable-line-width.mado-side-button,
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .markdown-preview-sizer p{
+	padding:0;
+	margin:0;
+}
+
+/* Remove br (new line) */
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .markdown-preview-sizer br{
+	display:none;
+}
+
+
+/* Remove pusher? to decrease addition height */
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button div.markdown-preview-pusher{
+	display:none;
+}
+/* Remove frontmatter */
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .markdown-preview-pusher+div{
+	display:none;
+}
+
+/* Define height to achieve margin-top:auto which automatically push the contents to the bottom */
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button div{
+	height:100%;
+}
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button p:first-child{
+	margin-top:auto;
+}
+/* Also have to remove min-height to achieve function above */
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .markdown-preview-sizer.markdown-preview-section{
+	min-height:0!important;
+}
+
+ /* Ignore padding when the setting Readable Line Length is turned off */
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button{
+	padding:0;
+}
+
+/* Button Plugin: Adjust style to match the current theme */
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .button-default{
+	border:none;
+	background:none;
+	color:var(--color-black);
+	margin:0;
+	box-shadow:none;
+	width:100%;
+}
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .button-default:hover{
+	transform:none;
+}
+
+/* Button styling */
+.nav-file-title,
+.nav-folder-title,
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .button-default{
+	padding:7px 15px;
+	border-radius:var(--button-radius);
+	transition:0.05s ease-in;
+	transition-property:background, opacity;
+	opacity:1;
+	display:flex;
+	align-items:center;
+	position:relative;
+	overflow:hidden; /* to hide left border animation */
+	font-size:0.9rem;
+	color:var(--color-black);
+	width:100%;
+	white-space:nowrap;
+}
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .button-default{
+	padding:11px 15px;
+}
+
+/* Icon Folder Plugin: Adjust button icon size */
+.mod-left-split .nav-file-title svg,
+.nav-folder-title svg,
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .button-default svg{
+	width:24px;
+	height:24px;
+	margin-right:3px;
+}
+
+/* Adjust spacing between icon and text*/
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .button-default svg{
+	margin-right:11px;
+	/* Prevent icon from shrinking when resizing */
+	flex-shrink:0;
+}
+
+.nav-file-title:active,
+.side-dock-ribbon-action:active{
+	opacity:0.8;
+}
+
+
+/* Navigation Button Left Border Styling and Animation */
+.nav-file-title::before,
+.side-dock-ribbon-action::before{
+	content:"";
+	position:absolute;
+	left:0;
+	top:50%;
+	width:4px;
+	height:0%;
+	border-radius:30%;
+	background:var(--color-accent);
+	transform:translateY(10%);
+	transition:all 0.3s cubic-bezier(1,.1,.36,1.22);
+}
+
+/* Navigation Button Selected and Hover */
+.nav-file-title.is-active{
+	background:var(--button-selected);
+}
+
+.nav-file-title.is-active::before{
+	height:55%;
+	transform:translateY(-50%);
+}
+
+.nav-file-title.is-active svg{
+	animation:0.3s bounceback;
+}
+
+.nav-file-title:hover,
+.side-dock-ribbon-action:hover,
+.mod-left-split .workspace-tabs .view-content .markdown-preview-view.mado-side-button .button-default:hover{
+	background:var(--button-hover);
+}
+
+.nav-file-title.is-active:hover{
+	background:var(--button-selected-hover);
+}
+
+@keyframes bounceback{
+	0% { transform:translateY(0%); }
+	60% { transform:translateY(10%); }
+	100% { transform:translateY(0%); }
+}
+
+/* Prevent from overflowing and show ... instead */
+.nav-file-title-content{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+/*
+--------------------------- 
+	Left Dock Styling but for the other panes
+---------------------------
+*/
+
+/* Add a distinguishing border but opt out if tab is the first one */
+.mod-left-split .workspace-tabs:not(:nth-of-type(2)) .workspace-leaf-content:not([data-type="markdown"]):not([data-type="file-explorer"]):not([data-type="star"]){
+	border-top:3px solid var(--color-gray);
+}
+
+/*
+--------------------------- 
+	Right Dock Styling
+---------------------------
+*/
+.workspace-split.mod-horizontal.mod-right-split{
+	padding:23px 33px;
+}
+
+/* Adjust padding */
+.workspace-split.mod-horizontal.mod-right-split .markdown-preview-view{
+	padding:11px 43px;
+}
+
+/* Remove additional padding at the bottom for docked notes */
+.workspace-split.mod-horizontal.mod-right-split .markdown-preview-view .markdown-preview-sizer.markdown-preview-section{
+	padding:0!important;
+}
+
+/* Remove background to match main pane's color */
+.workspace-split.mod-horizontal.mod-right-split{
+	background:var(--background-primary);
+}
+
+/* Adjust embed size to fit into smaller dock */
+.workspace-split.mod-horizontal.mod-right-split .markdown-preview-view .internal-embed .markdown-embed .markdown-preview-view{
+	padding:0;
+	min-height:0;
+}
+
+.workspace-split.mod-horizontal.mod-right-split .workspace-ribbon.side-dock-ribbon,
+.workspace-split.mod-horizontal.mod-right-split .workspace-tab-header-container,
+.workspace-split.mod-horizontal.mod-right-split .workspace-tab-header-inner{
+	background:var(--background-primary);
+}
+
+.workspace-split.mod-horizontal.mod-right-split{
+	padding-block:43px 43px;
+	gap:33px;
+}
+
+.workspace-split.mod-horizontal.mod-right-split .workspace-tabs .workspace-leaf-content{
+	background:var(--background-sixth);
+}
+
+.workspace-split.mod-horizontal.mod-right-split .workspace-tabs{
+	background:var(--background-sixth);
+	border-radius:var(--window-radius);
+	border:var(--border);
+	box-shadow:var(--window-shadow);
+}
+
+/*
+--------------------------- 
+	Overall / Remaining Styling
+---------------------------
+*/
+
+
+/* Adjust remaining background colours to match the theme */
+/* Includes Docks' tab-menu buttons */
+.workspace-tabs,
+.workspace-ribbon.side-dock-ribbon,
+.workspace-tab-header-container,
+.workspace-tab-header-inner{
+	background:var(--background-secondary);
+}
+
+/* Remove background from the back of the main pane */
+.workspace-split.mod-root{
+	background:none;
+}
+
+
+/* Make search visual more apparent */
+.document-search-container{
+	border-top:var(--border);
+}
+.document-search-close-button{
+	color:var(--text-muted);
+}
+input[type='text'],
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='number']{
+	border:var(--border);
+}
+
+
+
+/* Centering the numbers and the background for backlinks etc. */
+.workspace-tabs .tree-item-flair-outer{
+    vertical-align:middle;
+    display:inline-block;
+}
+
+/* Allow some space for the arrow buttons for backlinks etc. */
+.workspace-tabs .search-result-file-match{
+	padding-right:23px;
+	width:calc(100% - 13px);
+}
+.workspace-tabs .search-result-hover-button{
+    color:var(--text-muted);
+}
+
+/*
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+	Settings
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+*/
+
+.modal{
+	border-radius:var(--window-radius);
+	animation:0.2s popup forwards;
+}
+@keyframes popup{
+	0% { transform:scale(70%); opacity:0; }
+	15% { transform:scale(80%); opacity:0.1; }
+	35% { transform:scale(102%);  }
+	45% { opacity:0.3; }
+	65% { opacity:0.7; }
+	100% { transform:scale(100%); opacity:1; }
+}
+
+ /* Adjust width and height */
+.modal.mod-settings{
+	max-width:67vw;
+	height:83vh;
+}
+
+.modal.mod-settings .vertical-tabs-container,
+.modal.mod-settings .vertical-tab-header,
+.modal.mod-settings .vertical-tab-content-container{
+	height:100%;
+}
+
+
+
+.modal.mod-settings .vertical-tab-header{
+	flex:0 0 243px;
+}
+
+ /* close button styling */
+.modal-close-button{
+	display:flex;
+	padding:7px 11px 14px;
+	color:var(--color-dark-gray);
+	border-radius:var(--button-radius);
+	transition:0.1s background,0.1s opacity;
+	z-index:10;
+	opacity:0.7;
+	top:5px;
+	right:5px;
+}
+.modal-close-button:hover{
+	background:var(--button-hover);
+	color:var(--color-dark-gray);
+	opacity:1;
+}
+
+/* Make font red? */
+.mod-warning{
+	color:var(--text-error);
+}
+
+/* Make text readable in red background */
+button.mod-warning,
+button.mod-cta,
+.setting-hotkey.mod-active,
+.setting-hotkey.has-conflict{
+	color:var(--text-on-accent);
+}
+
+
+/* Button styling for small icon */
+.setting-editor-extra-setting-button.clickable-icon{
+	display:flex;
+	padding:11px;
+	color:var(--color-dark-gray);
+	border-radius:var(--button-radius);
+	transition:0.1s background;
+	opacity:0.7;
+	margin:0;
+}
+
+.pickr+.setting-editor-extra-setting-button.clickable-icon,
+.setting-editor-extra-setting-button.clickable-icon+.checkbox-container,
+.setting-editor-extra-setting-button.clickable-icon+.mod-cta{
+	margin-left:10px;
+}
+.setting-editor-extra-setting-button.clickable-icon:hover{
+	background:var(--button-hover);
+	color:var(--color-dark-gray);
+}
+
+
+
+/*
+--------------------------- 
+	Settings - Left sidebar
+---------------------------
+*/
+
+
+.modal.mod-settings .vertical-tab-header{
+	background:var(--background-secondary);
+	padding:0;
+	display:flex;
+	flex-direction:column;
+	gap:33px;
+}
+
+/* Remove top padding */
+.vertical-tab-header-group{
+	padding:0;
+}
+
+/* Button styling */
+.vertical-tab-header-group-items{
+	background:var(--background-secondary);
+	display:flex;
+	flex-direction:column;
+	gap:4px;
+	user-select:none;
+	padding-inline:8px;
+	padding-block:8px;
+}
+
+.vertical-tab-nav-item{
+	padding:7px 15px;
+	border-radius:var(--button-radius);
+	transition:0.05s ease-in;
+	transition-property:background, opacity;
+	opacity:1;
+	display:flex;
+	align-items:center;
+	position:relative;
+	overflow:hidden; /* to hide left border animation */
+	font-size:0.9rem;
+	color:var(--color-black);
+	width:100%;
+	white-space:nowrap;
+	border:none;
+	background:none;
+}
+
+.vertical-tab-nav-item::before{
+	content:"";
+	position:absolute;
+	left:0;
+	top:50%;
+	width:4px;
+	height:0%;
+	border-radius:30%;
+	background:var(--color-accent);
+	transform:translateY(10%);
+	transition:all 0.3s cubic-bezier(1,.1,.36,1.22);
+}
+
+.vertical-tab-nav-item.is-active{
+	background:var(--button-selected);
+}
+
+.vertical-tab-nav-item.is-active::before{
+	height:55%;
+	transform:translateY(-50%);
+}
+
+.vertical-tab-nav-item:hover{
+	background:var(--button-hover);
+}
+
+.vertical-tab-nav-item.is-active:hover{
+	background:var(--button-selected-hover);
+}
+
+/* Make it so that the title can be distinguished from the buttons */
+.vertical-tab-header-group-title{
+	background:var(--color-gray);
+	color:var(--text-muted);
+	font-size:0.75rem;
+	padding:7px 13px;
+	border-top:1px solid var(--modal-group-border);
+	border-bottom:1px solid var(--modal-group-border);
+}
+
+
+/*
+--------------------------- 
+	Settings - Right Content
+---------------------------
+*/
+
+.modal.mod-settings .vertical-tab-content-container{
+	background:var(--background-primary);
+	border-left:var(--border);
+	padding-top:53px;
+}
+
+.vertical-tab-content{
+	background:var(--background-primary);
+}
+
+
+
+/*
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+	Special Class: mado-header
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+*/
+.mado-header .markdown-preview-section>div>*{
+	position:relative;
+	padding:13px 33px 13px 63px;
+	margin:0 -30px;
+	border:var(--border);
+	border-radius:var(--button-radius);
+	background:var(--background-fourth);
+	transition:background 0.1s;
+}
+
+
+.mado-header .markdown-preview-section h1{
+	font-size:1.2rem;
+	font-weight:700;
+	padding:13px 43px;
+	margin-top:17px;
+}
+.mado-header h2{
+	font-size:1.17rem;
+}
+.mado-header h3{
+	font-size:1.07rem;
+}
+.mado-header h4{
+	font-size:1rem;
+}
+.mado-header h5{
+	font-size:1rem;
+	font-weight:700;
+}
+.mado-header h6{
+	font-size:1rem;
+	font-weight:700;
+}
+
+
+/* left border to indicate collapsible action */
+.mado-header h1:before,
+.mado-header h2:before,
+.mado-header h3:before,
+.mado-header h4:before,
+.mado-header h5:before,
+.mado-header h6:before{
+	content:"";
+	position:absolute;
+	left:0px;
+	top:0;
+	height:100%;
+	border-radius:var(--button-radius);
+	border-left:3px solid var(--color-accent-alt);
+}
+
+.mado-header h1:before{
+	border-radius:4px 0 0 4px;
+	border-left:3px solid var(--color-accent);
+}
+.mado-header h2:before{
+	left:0px;
+}
+.mado-header h3:before{
+	left:2px;
+}
+.mado-header h4:before{
+	left:4px;
+}
+.mado-header h5:before{
+	left:6px;
+}
+.mado-header h6:before{
+	left:8px;
+}
+
+
+.mado-header .heading-collapse-indicator{
+	margin-left:0;
+	width:100%;
+	height:100%;
+	padding:9px 33px;
+	top:0;
+	left:0;
+	position:absolute;
+}
+.mado-header h1 .heading-collapse-indicator{
+	padding:13px 33px;
+	text-align:right;
+}
+
+.mado-header h1:hover,
+.mado-header h2:hover,
+.mado-header h3:hover,
+.mado-header h4:hover,
+.mado-header h5:hover,
+.mado-header h6:hover{
+	background:var(--background-fifth);
+}
+
+.mado-header .markdown-preview-section>div>p{
+	padding-block:17px;
+}
+.mado-header .markdown-preview-section>div>ul,
+.mado-header .markdown-preview-section>div>ol{
+	padding-block:23px;
+}
+.mado-header .markdown-preview-section>div>hr{
+	display:none;
+}
+.mado-header .markdown-preview-section>div>pre{
+	background:var(--background-code-for-mado);
+}
+.mado-header .markdown-preview-section>div>blockquote{
+	padding-block:33px;
+	background:var(--background-secondary);
+	/* border-left:7px solid var(--background-modifier-border); */
+}
+.mado-header .markdown-preview-section>div>blockquote:before{
+	background:none;
+}
+.mado-header .markdown-preview-section>div>.callout{
+	padding-block:13px;
+	background:var(--background-secondary);
+}
+.mado-header .markdown-preview-section>div>.callout .callout-title{
+	/* margin:-13px -33px -13px -63px; */
+	margin:-7px -27px -7px -57px;
+	border-radius:var(--button-radius);
+}
+.mado-header .markdown-preview-section>div>blockquote>ul,
+.mado-header .markdown-preview-section>div>blockquote>ol{
+	padding:0;
+}
+.mado-header .markdown-preview-section>div>table{
+	width:calc(100% + 60px);
+	border-radius:var(--button-radius);
+	border-collapse:separate;
+	padding:0;
+	background:var(--background-secondary);
+}
+.mado-header .markdown-preview-section>div>table th,
+.mado-header .markdown-preview-section>div>table td{
+	padding:11px 13px;
+	text-align:center;
+	width:83px;
+}
+.mado-header .markdown-preview-section>div>table th{
+	background-color:var(--background-secondary);
+}
+.mado-header .markdown-preview-section>div>table td{
+	background:var(--background-fourth);
+	border:none;
+}
+.mado-header .markdown-preview-section>div>table thead>tr>*:first-child{
+	border-radius:4px 0 0 0;
+}
+.mado-header .markdown-preview-section>div>table thead>tr>*:last-child{
+	border-radius:0 4px 0 0;
+}
+.mado-header .markdown-preview-section>div>table tbody>tr:last-child>*:first-child{
+	border-radius:0 0 0 4px;
+}
+.mado-header .markdown-preview-section>div>table tbody>tr:last-child>*:last-child{
+	border-radius:0 0 4px 0;
+}
+
+
+
+/*
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+	Community Plugin Support
+--------------------------- --------------------------- 
+--------------------------- --------------------------- 
+*/
+
+/*
+--------------------------- 
+	Banner Plugin
+---------------------------
+*/
+/* Fixing extra spacing on top */
+.workspace-split.mod-vertical.mod-root .markdown-preview-sizer.markdown-preview-section div.obsidian-banner-wrapper{
+	/* transform is the culprit, possible reason: https://stackoverflow.com/questions/70995180/strange-change-in-the-behavior-of-a-modal-child-component-after-setting-style */
+	animation:none;
+}
+.mado-header .markdown-preview-section>div.obsidian-banner-wrapper>*{
+	padding:0;
+	margin:0;
+	position:absolute;
+}

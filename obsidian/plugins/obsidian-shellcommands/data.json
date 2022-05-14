@@ -1,0 +1,48 @@
+{
+  "settings_version": "0.12.0",
+  "debug": false,
+  "obsidian_command_palette_prefix": "Execute: ",
+  "preview_variables_in_command_palette": true,
+  "show_autocomplete_menu": true,
+  "working_directory": "",
+  "default_shells": {
+    "win32": "PowerShell.exe"
+  },
+  "error_message_duration": 1,
+  "notification_message_duration": 1,
+  "output_channel_clipboard_also_outputs_to_notification": true,
+  "enable_events": true,
+  "shell_commands": {
+    "0": {
+      "platform_specific_commands": {
+        "default": "python .obsidian\\PythonScript\\bilibili_to_ob.py"
+      },
+      "shells": {},
+      "alias": "",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "output_channels": {
+        "stdout": "ignore",
+        "stderr": "notification"
+      },
+      "output_channel_order": "stdout-first",
+      "events": {
+        "on-layout-ready": {
+          "enabled": true
+        },
+        "on-quit": {
+          "enabled": true
+        },
+        "every-n-seconds": {
+          "enabled": false,
+          "seconds": 60
+        }
+      },
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    }
+  },
+  "prompts": [],
+  "custom_variables": []
+}
