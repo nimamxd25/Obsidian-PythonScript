@@ -29,7 +29,7 @@ def write_note(bvid,folder_path,path_two,path_three):
             f.write('暂时不支持此类型连接，请不要用此脚本爬取B站番剧和电影等，或者用于其他网站')
     elif 'ugc_season' not in vid['data']:
         bvid = vid['data']['bvid']
-        title = vid['data']['title']
+        title = vid['data']['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
         video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
         line = '- [ ] [{}]({})\n'.format(title, video_url)
         print(line)
@@ -47,7 +47,7 @@ def write_note(bvid,folder_path,path_two,path_three):
         mkdir(path_two) 
         mkdir(path_three)
         for i in ep:
-            title = i['title']
+            title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
             bvid = i['bvid']
             video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
             with open('{}/{}.md'.format(path_three, title), 'w', encoding="utf-8") as f:
@@ -80,7 +80,7 @@ def bilibili_to_ob(path_one,url):
         print(vid)
         if 'ugc_season' not in vid['data']:
             bvid = vid['data']['bvid']
-            title = vid['data']['title']
+            title = vid['data']['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
             video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
             line = '- [ ] [{}]({})\n'.format(title, video_url)
             # 判断笔记是否已经存在
@@ -105,7 +105,7 @@ def bilibili_to_ob(path_one,url):
                 # 如果不存在，则创建新目录
                 os.makedirs(path_three)
                 for i in ep:
-                    title = i['title']
+                    title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
                     bvid = i['bvid']
                     video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
                     with open('{}/{}.md'.format(path_three, title), 'w', encoding="utf-8") as f:
