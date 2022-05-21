@@ -1,11 +1,24 @@
+# 本脚本无需在Obsidian中安装额外插件
+
+# 导入必要的库，也是你需要安装
+# 可在cmd中输入pip install xxx(xxx为库名，如requests)
 import requests
+import re
 import json
+import pprint
+import subprocess
 import os
 
+# 以下为主体代码，如务必要，请勿自行修改
+# 如果有报错，可以在B站给我留言，或者github上提交问题
+
+# 读取cookies
+cookie = open("D:/0011 Obsidian存放文件夹/Study/700 Others/cookies.md", 'r', encoding="utf-8").read()
+
 headers = {
-    'referer': 'https://space.bilibili.com/18225929/favlist?fid=articles',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50',
-    'cookie':  ## 自行添加
+    'referer': 'https://space.bilibili.com',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0',
+    'cookie': cookie
 }
 
 def mkdir(path):
@@ -32,7 +45,7 @@ def write_note(bvid,folder_path,path_two,path_three):
         title = vid['data']['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
         video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
         line = '- [ ] [{}]({})\n'.format(title, video_url)
-        print(line)
+        # print(line)
         with open('{}/{}.md'.format(path_one, title), 'w', encoding="utf-8") as f:
             f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
             f.write('# 学习视频\n')
@@ -77,51 +90,84 @@ def bilibili_to_ob(path_one,url):
         bvid = i['bvid']
         new_url = 'https://api.bilibili.com/x/web-interface/view?bvid={}'.format(bvid)
         vid = json.loads(requests.get(url=new_url, headers=headers).text)
-        print(vid)
         if 'ugc_season' not in vid['data']:
+            # pprint.pprint(vid)
             bvid = vid['data']['bvid']
             title = vid['data']['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
-            video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
-            line = '- [ ] [{}]({})\n'.format(title, video_url)
-            # 判断笔记是否已经存在
-            note = os.path.exists('{}/{}.md'.format(path_one, title))
-            if not note:
-                with open('{}/{}.md'.format(path_one, title), 'w', encoding="utf-8") as f:
-                    f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
-                    f.write('# 学习视频\n')
-                    f.write(line)
-                    f.write('# 笔记\n')
-                    print('{} 视频已同步！'.format(title))
-        else:
-            ep = vid['data']['ugc_season']['sections'][0]['episodes']
-            epname = vid['data']['ugc_season']['title']
-            cover = vid['data']['ugc_season']['cover']
-            # 创建对应文件夹
-            path_two = '{}/{}'.format(path_one,epname)
-            path_three = '{}/{}'.format(path_two,'笔记')
-            # 判断文件夹是否已经存在
-            folder = os.path.exists(path_two)
-            if not folder:
-                # 如果不存在，则创建新目录
-                os.makedirs(path_three)
-                for i in ep:
-                    title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
-                    bvid = i['bvid']
-                    video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
-                    with open('{}/{}.md'.format(path_three, title), 'w', encoding="utf-8") as f:
+            pages = vid['data']['pages']
+            if len(pages) == 1:         
+                video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
+                line = '- [ ] [{}]({})\n'.format(title, video_url)
+                # 判断笔记是否已经存在
+                note = os.path.exists('{}/{}.md'.format(path_one, title))
+                if not note:
+                    with open('{}/{}.md'.format(path_one, title), 'w', encoding="utf-8") as f:
+                        f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
                         f.write('# 学习视频\n')
-                        line = '[{}]({})\n'.format(title, video_url)
                         f.write(line)
-                        f.write('# 笔记\n') 
-                print('{} 视频已同步！'.format(epname))
+                        f.write('# 笔记\n')
+                        # print('{} 视频已同步！'.format(title))
+            else:
+                # 创建对应文件夹
+                path_two = '{}/{}'.format(path_one,title)
+                path_three = '{}/{}'.format(path_two,'笔记')
+                # 判断文件夹是否已经存在
+                folder = os.path.exists(path_two)
+                if not folder:               
+                    # 如果不存在，则创建新目录
+                    os.makedirs(path_three)
+                    for i in pages:
+                        page_name = i['part'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                        # bvid = bvid + '?p={}'.format(i['page'])
+                        video_url = 'https://www.bilibili.com/video/{}?p={}'.format(bvid,i['page'])
+                        with open('{}/{}.md'.format(path_three, page_name), 'w', encoding="utf-8") as f:
+                            f.write('# 学习视频\n')
+                            line = '[{}]({})\n'.format(page_name, video_url)
+                            f.write(line)
+                            f.write('# 笔记\n') 
+                    # print('{} 视频已同步！'.format(epname))
+                    with open('{}/{}.md'.format(path_two,title), 'a', encoding="utf-8") as f:
+                        # f.write('---\n')
+                        # f.write('banner: {}\n'.format(cover))
+                        f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
+                        f.write('# 学习清单\n')
+                        for i in pages:
+                            page_name = i['part'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                            f.write('- [ ] [[{}]]\n'.format(page_name))
 
-                with open('{}/{}.md'.format(path_two,epname), 'a', encoding="utf-8") as f:
-                    # f.write('---\n')
-                    # f.write('banner: {}\n'.format(cover))
-                    f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
-                    f.write('# 学习清单\n')
+
+        else:
+            if 'ugc_season' in vid['data']:
+                # pprint.pprint(vid)
+                ep = vid['data']['ugc_season']['sections'][0]['episodes']
+                epname = vid['data']['ugc_season']['title']
+                cover = vid['data']['ugc_season']['cover']
+                # 创建对应文件夹
+                path_two = '{}/{}'.format(path_one,epname)
+                path_three = '{}/{}'.format(path_two,'笔记')
+                # 判断文件夹是否已经存在
+                folder = os.path.exists(path_two)
+                if not folder:
+                    # 如果不存在，则创建新目录
+                    os.makedirs(path_three)
                     for i in ep:
-                        f.write('- [ ] [[{}]]\n'.format(i['title']))
+                        title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                        bvid = i['bvid']
+                        video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
+                        with open('{}/{}.md'.format(path_three, title), 'w', encoding="utf-8") as f:
+                            f.write('# 学习视频\n')
+                            line = '[{}]({})\n'.format(title, video_url)
+                            f.write(line)
+                            f.write('# 笔记\n') 
+                    # print('{} 视频已同步！'.format(epname))   
+
+                    with open('{}/{}.md'.format(path_two,epname), 'a', encoding="utf-8") as f:
+                        # f.write('---\n')
+                        # f.write('banner: {}\n'.format(cover))
+                        f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
+                        f.write('# 学习清单\n')
+                        for i in ep:
+                            f.write('- [ ] [[{}]]\n'.format(i['title']))
 
 def get_id(name):
     # 获取mid
@@ -139,12 +185,12 @@ def get_id(name):
         id_list.append(id_)
         title_list.append(title)
     dic = dict(zip(title_list, id_list))
-    print(dic)
+    # print(dic)
     return dic[name]
 
 
 # 收藏夹名字
-settings = "D:/0011 Obsidian存放文件夹/Study/700 功能性文件/Python脚本设置.md"
+settings = "D:/0011 Obsidian存放文件夹/Study/700 Others/Python脚本设置.md"
 setting = str(open(settings, 'r', encoding="utf-8").read()).replace('\n','').replace(' ','')
       
 names = re.findall('##B站同步文件夹(.*?)##', setting)[0].split('-[]')

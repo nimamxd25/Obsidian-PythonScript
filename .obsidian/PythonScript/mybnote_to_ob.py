@@ -1,3 +1,8 @@
+# 需要在Obsidian中安装以下插件
+## Shell Commands，用于在Obsidian中实现调用python脚本，以及脚本的自动化运行
+
+# 导入必要的库，也是你需要安装
+# 可在cmd中输入pip install xxx(xxx为库名，如requests)
 import requests
 import re
 import json
@@ -5,10 +10,16 @@ from pprint import *
 import subprocess
 import os
 
+# 以下为主体代码，如务必要，请勿自行修改
+# 如果有报错，可以在B站给我留言，或者github上提交问题
+
+# 读取cookies
+cookie = open("D:/0011 Obsidian存放文件夹/Study/700 Others/cookies.md", 'r', encoding="utf-8").read()
+
 headers = {
-    'referer': 'https://space.bilibili.com/18225929/favlist?fid=articles',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50',
-    'cookie': # 请自行添加
+    'referer': 'https://space.bilibili.com',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0',
+    'cookie': cookie
 }
 
 def mkdir(path):
