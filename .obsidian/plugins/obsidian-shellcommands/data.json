@@ -27,12 +27,6 @@
       },
       "output_channel_order": "stdout-first",
       "events": {
-        "on-layout-ready": {
-          "enabled": true
-        },
-        "on-quit": {
-          "enabled": true
-        },
         "every-n-seconds": {
           "enabled": false,
           "seconds": 60
