@@ -4,12 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "28d8961153da5fef",
+        "id": "36f99c5f8551bd14",
         "type": "leaf",
         "state": {
-          "type": "kanban",
+          "type": "markdown",
           "state": {
-            "file": "700 功能性文件/Python脚本设置.md"
+            "file": "100 B站视频/Obsidian同步收藏夹/周杰伦/笔记/(4K超清)周杰伦 超时代演唱会台北站.md",
+            "mode": "preview",
+            "source": true
           }
         }
       }
@@ -67,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "700 功能性文件/Python脚本设置.md",
+                "file": "100 B站视频/Obsidian同步收藏夹/周杰伦/笔记/(4K超清)周杰伦 超时代演唱会台北站.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -85,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "28d8961153da5fef",
+  "active": "36f99c5f8551bd14",
   "lastOpenFiles": [
-    "700 功能性文件/Python脚本设置.md",
-    "700 功能性文件/HomePage.md",
-    "700 功能性文件/B站视频.md",
-    "100 B站视频/PhotoShop/【ps教程】文件居然能这样变清晰~我我我我！！！.md",
-    "100 B站视频/PhotoShop/【PS教程】逆光海边人像修图调色技巧 暖色调人物肤色修片 老猫公开课.md",
-    "100 B站视频/PhotoShop/【双语字幕】教你如何把人像照片后期成INS网红Brandon Woelfel的风格 只需Lightroom+Photoshop轻松几步.md",
-    "700 功能性文件/myButton.md",
-    "100 B站视频/Obsidian同步收藏夹/Johnny学Vika/笔记/Johnny学Vika 第7集 用一个公式，帮你提升5倍的生产力.md",
-    "100 B站视频/Obsidian同步收藏夹/Johnny学Vika/Johnny学Vika.md",
-    "100 B站视频/Obsidian同步收藏夹/Johnny学Vika/笔记/Johnny学Vika 第6集 教你用Vika来.md"
+    "100 B站视频/Obsidian同步收藏夹/周杰伦/笔记/(4K超清)周杰伦 超时代演唱会台北站.md",
+    "100 B站视频/Obsidian同步收藏夹/周杰伦/周杰伦.md",
+    "【4K超清】周杰伦 超时代演唱会台北站.md",
+    "关注UP更新.md",
+    "700 功能性文件/cookies.md",
+    "README.md",
+    "400 B站视频笔记/将b站视频的笔记，拉回obsidian.md",
+    "400 B站视频笔记/教你一键把B站视频收藏夹同步到Obsidian中.md",
+    "400 B站视频笔记/如何用好Obsidian进行视频教程学习.md",
+    "400 B站视频笔记/为什么黑洞是科学的禁区？.md"
   ]
 }

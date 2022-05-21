@@ -13,7 +13,7 @@ import os
 # 如果有报错，可以在B站给我留言，或者github上提交问题
 
 # 读取cookies
-cookie = open("D:/0011 Obsidian存放文件夹/Study/700 Others/cookies.md", 'r', encoding="utf-8").read()
+cookie = open("700 功能性文件/cookies.md", 'r', encoding="utf-8").read()
 
 headers = {
     'referer': 'https://space.bilibili.com',
@@ -167,7 +167,8 @@ def bilibili_to_ob(path_one,url):
                         f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
                         f.write('# 学习清单\n')
                         for i in ep:
-                            f.write('- [ ] [[{}]]\n'.format(i['title']))
+                            title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                            f.write('- [ ] [[{}]]\n'.format(title))
 
 def get_id(name):
     # 获取mid
@@ -190,7 +191,7 @@ def get_id(name):
 
 
 # 收藏夹名字
-settings = "D:/0011 Obsidian存放文件夹/Study/700 Others/Python脚本设置.md"
+settings = "700 功能性文件/Python脚本设置.md"
 setting = str(open(settings, 'r', encoding="utf-8").read()).replace('\n','').replace(' ','')
       
 names = re.findall('##B站同步文件夹(.*?)##', setting)[0].split('-[]')

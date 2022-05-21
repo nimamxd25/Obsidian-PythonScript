@@ -41,6 +41,42 @@
       "command_palette_availability": "enabled",
       "preactions": [],
       "variable_default_values": {}
+    },
+    "1": {
+      "platform_specific_commands": {
+        "default": "python .obsidian\\PythonScript\\bilibili_updataed_to_ob.py"
+      },
+      "shells": {},
+      "alias": "",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "output_channels": {
+        "stdout": "ignore",
+        "stderr": "notification"
+      },
+      "output_channel_order": "stdout-first",
+      "events": {},
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
+    },
+    "2": {
+      "platform_specific_commands": {
+        "default": "python .obsidian\\PythonScript\\mybnote_to_ob.py"
+      },
+      "shells": {},
+      "alias": "",
+      "confirm_execution": false,
+      "ignore_error_codes": [],
+      "output_channels": {
+        "stdout": "ignore",
+        "stderr": "notification"
+      },
+      "output_channel_order": "stdout-first",
+      "events": {},
+      "command_palette_availability": "enabled",
+      "preactions": [],
+      "variable_default_values": {}
     }
   },
   "prompts": [],

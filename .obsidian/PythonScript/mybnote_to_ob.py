@@ -14,7 +14,7 @@ import os
 # 如果有报错，可以在B站给我留言，或者github上提交问题
 
 # 读取cookies
-cookie = open("D:/0011 Obsidian存放文件夹/Study/700 Others/cookies.md", 'r', encoding="utf-8").read()
+cookie = open("700 功能性文件/cookies.md", 'r', encoding="utf-8").read()
 
 headers = {
     'referer': 'https://space.bilibili.com',
