@@ -89,7 +89,7 @@ def get_update_info(mid):
     return info
 
 
-settings = "D:/0011 Obsidian存放文件夹/Study/700 Others/Python脚本设置.md"
+settings = "700 功能性文件/Python脚本设置.md"
 setting = str(open(settings, 'r', encoding="utf-8").read()).replace('\n','').replace(' ','').split('##')
 # print(setting)
 for i in setting:

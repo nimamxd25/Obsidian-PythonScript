@@ -190,7 +190,7 @@ def get_id(name):
 
 
 # 收藏夹名字
-settings = "D:/0011 Obsidian存放文件夹/Study/700 Others/Python脚本设置.md"
+settings = "700 功能性文件/Python脚本设置.md"
 setting = str(open(settings, 'r', encoding="utf-8").read()).replace('\n','').replace(' ','')
       
 names = re.findall('##B站同步文件夹(.*?)##', setting)[0].split('-[]')
