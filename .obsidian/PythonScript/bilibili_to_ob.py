@@ -5,7 +5,7 @@
 import requests
 import re
 import json
-import pprint
+from pprint import *
 import subprocess
 import os
 
@@ -40,9 +40,10 @@ def write_note(bvid,folder_path,path_two,path_three):
     if 'BV' not in url:
         with open('error.md', 'w', encoding="utf-8") as f:
             f.write('暂时不支持此类型连接，请不要用此脚本爬取B站番剧和电影等，或者用于其他网站')
-    elif 'ugc_season' not in vid['data']:
+    elif 'data' in vid and 'ugc_season' not in vid['data']:
         bvid = vid['data']['bvid']
-        title = vid['data']['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+        # title = vid['data']['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+        title = re.sub('([^\u4e00-\u9fa5])', '', vid['data']['title']).replace('/','-')
         video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
         line = '- [ ] [{}]({})\n'.format(title, video_url)
         # print(line)
@@ -60,7 +61,8 @@ def write_note(bvid,folder_path,path_two,path_three):
         mkdir(path_two) 
         mkdir(path_three)
         for i in ep:
-            title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+            # title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+            title = re.sub('([^\u4e00-\u9fa5])', '', i['title']).replace('/','-')
             bvid = i['bvid']
             video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
             with open('{}/{}.md'.format(path_three, title), 'w', encoding="utf-8") as f:
@@ -75,6 +77,7 @@ def write_note(bvid,folder_path,path_two,path_three):
             f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
             f.write('# 学习清单\n')
             for i in ep:
+                title = re.sub('([^\u4e00-\u9fa5])', '', i['title']).replace('/','-')
                 f.write('- [ ] [[{}]]\n'.format(i['title']))
 
 def bilibili_to_ob(path_one,url):
@@ -90,10 +93,11 @@ def bilibili_to_ob(path_one,url):
         bvid = i['bvid']
         new_url = 'https://api.bilibili.com/x/web-interface/view?bvid={}'.format(bvid)
         vid = json.loads(requests.get(url=new_url, headers=headers).text)
-        if 'ugc_season' not in vid['data']:
+        if 'data' in vid and 'ugc_season' not in vid['data']:
             # pprint.pprint(vid)
             bvid = vid['data']['bvid']
-            title = vid['data']['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+            # title = vid['data']['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+            title = re.sub('([^\u4e00-\u9fa5])', '', vid['data']['title']).replace('/','-')
             pages = vid['data']['pages']
             if len(pages) == 1:         
                 video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
@@ -117,7 +121,8 @@ def bilibili_to_ob(path_one,url):
                     # 如果不存在，则创建新目录
                     os.makedirs(path_three)
                     for i in pages:
-                        page_name = i['part'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                        # page_name = i['part'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                        page_name = re.sub('([^\u4e00-\u9fa5])', '', i['part']).replace('/','-')
                         # bvid = bvid + '?p={}'.format(i['page'])
                         video_url = 'https://www.bilibili.com/video/{}?p={}'.format(bvid,i['page'])
                         with open('{}/{}.md'.format(path_three, page_name), 'w', encoding="utf-8") as f:
@@ -132,12 +137,12 @@ def bilibili_to_ob(path_one,url):
                         f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
                         f.write('# 学习清单\n')
                         for i in pages:
-                            page_name = i['part'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                            page_name = re.sub('([^\u4e00-\u9fa5])', '', i['part']).replace('/','-')
                             f.write('- [ ] [[{}]]\n'.format(page_name))
 
 
         else:
-            if 'ugc_season' in vid['data']:
+            if 'data' in vid and 'ugc_season' in vid['data']:
                 # pprint.pprint(vid)
                 ep = vid['data']['ugc_season']['sections'][0]['episodes']
                 epname = vid['data']['ugc_season']['title']
@@ -151,7 +156,8 @@ def bilibili_to_ob(path_one,url):
                     # 如果不存在，则创建新目录
                     os.makedirs(path_three)
                     for i in ep:
-                        title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                        # title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                        title = re.sub('([^\u4e00-\u9fa5])', '', i['title'])
                         bvid = i['bvid']
                         video_url = 'https://www.bilibili.com/video/{}'.format(bvid)
                         with open('{}/{}.md'.format(path_three, title), 'w', encoding="utf-8") as f:
@@ -167,7 +173,8 @@ def bilibili_to_ob(path_one,url):
                         f.write('---\ntarget: tasks\nstatus: in progress\ntags: bilibili\n---\n')
                         f.write('# 学习清单\n')
                         for i in ep:
-                            title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                            # title = i['title'].replace('：','-').replace('|','-').replace('【','(').replace('】',')').replace('！','').replace('/','-')
+                            title = re.sub('([^\u4e00-\u9fa5])', '', i['title']).replace('/','-')
                             f.write('- [ ] [[{}]]\n'.format(title))
 
 def get_id(name):
@@ -178,16 +185,24 @@ def get_id(name):
     # 获取
     url = 'https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid={}&jsonp=jsonp'.format(mid)
     json_data = json.loads(requests.get(url=url, headers=headers).text)
+    pprint(json_data)
     id_list = []
     title_list = []
-    for i in json_data['data']['list']:
+    count_list = []
+
+    favorites_list = json_data['data']['list']
+    f = {}
+    for i in favorites_list:
         id_ = i['id']
-        title = i['title']
-        id_list.append(id_)
-        title_list.append(title)
-    dic = dict(zip(title_list, id_list))
+        title = re.sub('([^\u4e00-\u9fa5])', '', i['title']).replace('/','-')
+        count = i['media_count']
+        f[title] = [id_, count]
+    #     id_list.append(id_)
+    #     title_list.append(title)
+    #     count_list.append(count)
+    # dic = dict(zip(title_list, id_list))
     # print(dic)
-    return dic[name]
+    return f
 
 
 # 收藏夹名字
@@ -198,7 +213,11 @@ names = re.findall('##B站同步文件夹(.*?)##', setting)[0].split('-[]')
 names = [i for i in names if i != '']
 for name in names:
     # name = 'Obsidian同步收藏夹'
-    id_ = get_id(name)
-    url = 'https://api.bilibili.com/x/v3/fav/resource/list?media_id={}&pn=1&ps=20&keyword=&order=mtime&type=0&tid=0&platform=web&jsonp=jsonp'.format(id_)
-    path_one = '100 B站视频/{}'.format(name)
-    ok = bilibili_to_ob(path_one,url)
+    f = get_id(name)
+    id_ = f[name][0]
+    count = f[name][1]
+    num_page = int(count/20)+1
+    for i in range(num_page):
+        url = 'https://api.bilibili.com/x/v3/fav/resource/list?media_id={}&pn={}&ps=20&keyword=&order=mtime&type=0&tid=0&platform=web&jsonp=jsonp'.format(id_, i+1)
+        path_one = '100 B站视频/{}'.format(name)
+        ok = bilibili_to_ob(path_one, url)
